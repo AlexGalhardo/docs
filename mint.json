@@ -13,9 +13,9 @@
   },
   "anchors": [
     {
-      "name": "API",
+      "name": "API Requests",
       "icon": "rectangle-terminal",
-      "url": "api"
+      "url": "api-docs"
     }
   ],
   "navigation": [
@@ -28,35 +28,35 @@
     {
       "group": "API",
       "pages": [
-        "api/autenticacao"
+        "api-docs/autenticacao"
       ]
     },
     {
       "group": "Games Endpoints",
       "pages": [
-        "api/games/get",
-        "api/games/games",
-        "api/games/create",
-        "api/games/update",
-        "api/games/delete"
+        "api-docs/games/get",
+        "api-docs/games/games",
+        "api-docs/games/create",
+        "api-docs/games/update",
+        "api-docs/games/delete"
       ]
     },
     {
       "group": "Books Endpoints",
       "pages": [
-        "api/books/get",
-        "api/books/create",
-        "api/books/update",
-        "api/books/delete"
+        "api-docs/books/get",
+        "api-docs/books/create",
+        "api-docs/books/update",
+        "api-docs/books/delete"
       ]
     },
     {
       "group": "Movies Endpoints",
       "pages": [
-        "api/books/get",
-        "api/books/create",
-        "api/books/update",
-        "api/books/delete"
+        "api-docs/books/get",
+        "api-docs/books/create",
+        "api-docs/books/update",
+        "api-docs/books/delete"
       ]
     }
   ]
