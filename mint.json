@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "NerdAPI",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
@@ -13,27 +13,49 @@
   },
   "anchors": [
     {
-      "name": "API Reference",
+      "name": "API",
       "icon": "rectangle-terminal",
-      "url": "api-reference"
+      "url": "api"
     }
   ],
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introducao", "features"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/autenticacao"]
-    },
-    {
-      "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "introducao"
+      ]
+    },
+    {
+      "group": "API",
+      "pages": [
+        "api/autenticacao"
+      ]
+    },
+    {
+      "group": "Games Endpoints",
+      "pages": [
+        "api/games/get",
+        "api/games/create",
+        "api/games/update",
+        "api/games/delete"
+      ]
+    },
+    {
+      "group": "Books Endpoints",
+      "pages": [
+        "api/books/get",
+        "api/books/create",
+        "api/books/update",
+        "api/books/delete"
+      ]
+    },
+    {
+      "group": "Movies Endpoints",
+      "pages": [
+        "api/books/get",
+        "api/books/create",
+        "api/books/update",
+        "api/books/delete"
       ]
     }
   ]

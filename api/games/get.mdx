@@ -1,0 +1,151 @@
+---
+title: "GET Game"
+api: "GET https://api.nerdapi.com/game"
+description: "Esse endpoint retorna apenas um game de acordo com os filtros enviados no body da requisição"
+---
+
+### Body
+
+<ParamField body="id" type="string">
+  ID do jogo.
+</ParamField>
+
+<ParamField body="title" type="string">
+  Título do Jogo
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Returna true se requisição foi bem sucedida, false caso contrário.
+</ResponseField>
+
+<ResponseField name="message" type="boolean">
+  Se retornar success false, retorna breve resumo do problema.
+</ResponseField>
+
+<ResponseField name="errors" type="boolean">
+  Se retornar success false, retorna objeto com os erros encontrados.
+</ResponseField>
+
+<ResponseField name="game" type="object">
+
+Objeto completo com todas as informações do jogo.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="string">
+  ID do jogo.
+</ResponseField>
+
+<ResponseField name="title" type="string">
+  Título do Jogo
+</ResponseField>
+
+<ResponseField name="cover_image" type="string">
+  URL da imagem de capa do jogo.
+</ResponseField>
+
+<ResponseField name="release_year" type="number">
+  Número inteiro com ano de lançamento.
+</ResponseField>
+
+<ResponseField name="metacritic_score" type="number">
+  Número inteiro com nota do metacritic.
+</ResponseField>
+
+<ResponseField name="platforms" type="array">
+  Plataforms disponíveis para jogar esse jogo.
+</ResponseField>
+
+<ResponseField name="genres" type="array">
+  Tipos de genêros que esse jogo se adequa.
+</ResponseField>
+
+<ResponseField name="developer" type="object">
+  Desenvolvedora desse jogo.
+</ResponseField>
+
+<ResponseField name="publisher" type="object">
+  Publicadora desse jogo.
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Requisição usando cURL
+curl --location --request GET 'https://api.nerdapi.com/game' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--data-raw '{
+    "id": "cf9d71d6-4692-4052-aee6-793b92290cb6"
+}'
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/game`, {
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({
+        "title": "God Of War Ragnarok",
+     })
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response Sucessfull
+{
+  "success": true,
+  "game": {
+    "id": "cf9d71d6-4692-4052-aee6-793b92290cb6",
+    "title": "God Of War Ragnarok",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
+    "release_year": 2022,
+    "metacritic_score": 95,
+    "platforms": [
+      {
+        "id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+        "name": "PlayStation 5",
+        "acronym": "PS5",
+      }
+    ],
+    "genres": [
+      {
+        "id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+        "name": "Action",
+      }
+    ],
+    "developer": {
+        "id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+        "name": "Santa Mônica Studio",
+    },
+    "publisher": {
+        "id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+        "name": "Sony Entertainment",
+    },
+    "last_update_at_BR": "23-09-2023 15:32:32",
+    "last_update_at": "Sun Aug 06 2023 16:47:15 GMT-0300 (Brasilia Standard Time)",
+  }
+}
+```
+
+```json Response Fail
+{
+  "success": false,
+  "message": "Jogo não encontrado. Verifique se você enviou id e/ou title corretamente no corpo da requisição.",
+  "errors": {
+    "id": "not found",
+    "title": "not found"
+  }
+}
+```
+
+</ResponseExample>

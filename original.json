@@ -1,0 +1,45 @@
+{
+	"$schema": "https://mintlify.com/schema.json",
+	"name": "Documentation Starter Kit",
+	"logo": {
+		"dark": "/logo/dark.png",
+		"light": "/logo/light.png"
+	},
+	"favicon": "/favicon.png",
+	"colors": {
+		"primary": "#0069ED",
+		"light": "#4D9CFF",
+		"dark": "#0050B4"
+	},
+	"anchors": [
+		{
+			"name": "API Reference",
+			"icon": "rectangle-terminal",
+			"url": "api-reference"
+		}
+	],
+	"navigation": [
+		{
+			"group": "Home",
+			"pages": [
+				"introducao",
+				"features"
+			]
+		},
+		{
+			"group": "API Documentation",
+			"pages": [
+				"api-reference/autenticacao"
+			]
+		},
+		{
+			"group": "Endpoint Examples",
+			"pages": [
+				"api-reference/endpoint/get",
+				"api-reference/endpoint/create",
+				"api-reference/endpoint/update",
+				"api-reference/endpoint/delete"
+			]
+		}
+	]
+}
