@@ -1,0 +1,196 @@
+---
+title: "GET Games"
+api: "GET https://api.nerdapi.com/games"
+description: "Esse endpoint retorna vários jogos de acordo com os filtros enviados no body da requisição"
+---
+
+### Body
+
+<ParamField body="genres" type="string">
+  Filtrar jogos por gênero.
+</ParamField>
+
+<ParamField body="platforms" type="string">
+  Filtrar jogos por plataformas disponíveis.
+</ParamField>
+
+<ParamField body="release_year" type="string">
+  Filtrar jogos por ano.
+</ParamField>
+
+<ParamField body="metacritic_score" type="string">
+  Filtrar jogos por nota metacritic maior ou igual que.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Returna true se requisição foi bem sucedida, false caso contrário.
+</ResponseField>
+
+<ResponseField name="message" type="boolean">
+  Se retornar success false, retorna breve resumo do problema.
+</ResponseField>
+
+<ResponseField name="errors" type="boolean">
+  Se retornar success false, retorna objeto com os erros encontrados.
+</ResponseField>
+
+<ResponseField name="games" type="object">
+
+Array de objetos com todos os jogos encontrados a partir do filtro.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="string">
+  ID do jogo.
+</ResponseField>
+
+<ResponseField name="title" type="string">
+  Título do Jogo
+</ResponseField>
+
+<ResponseField name="cover_image" type="string">
+  URL da imagem de capa do jogo.
+</ResponseField>
+
+<ResponseField name="release_year" type="number">
+  Número inteiro com ano de lançamento.
+</ResponseField>
+
+<ResponseField name="metacritic_score" type="number">
+  Número inteiro com nota do metacritic.
+</ResponseField>
+
+<ResponseField name="platforms" type="array">
+  Plataforms disponíveis para jogar esse jogo.
+</ResponseField>
+
+<ResponseField name="genres" type="array">
+  Tipos de genêros que esse jogo se adequa.
+</ResponseField>
+
+<ResponseField name="developer" type="object">
+  Desenvolvedora desse jogo.
+</ResponseField>
+
+<ResponseField name="publisher" type="object">
+  Publicadora desse jogo.
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Requisição usando cURL
+curl --location --request GET 'https://api.nerdapi.com/game' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--data-raw '{
+    "id": "cf9d71d6-4692-4052-aee6-793b92290cb6"
+}'
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/game`, {
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({
+        "title": "God Of War Ragnarok",
+     })
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response Sucessfull
+{
+  "success": true,
+  "games": [
+	{
+		"id": "cf9d71d6-4692-4052-aee6-793b92290cb6",
+		"title": "God Of War Ragnarok",
+		"cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
+		"release_year": 2022,
+		"metacritic_score": 95,
+		"platforms": [
+		{
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "PlayStation 5",
+			"acronym": "PS5",
+		}
+		],
+		"genres": [
+		{
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "Action",
+		}
+		],
+		"developer": {
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "Santa Mônica Studio",
+		},
+		"publisher": {
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "Sony Entertainment",
+		},
+		"last_update_at_BR": "23-09-2023 15:32:32",
+		"last_update_at": "Sun Aug 06 2023 16:47:15 GMT-0300 (Brasilia Standard Time)",
+  	},
+	{
+		"id": "cf9d71d6-4692-4052-aee6-793b92290cb6",
+		"title": "God Of War",
+		"cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
+		"release_year": 2018,
+		"metacritic_score": 94,
+		"platforms": [
+			{
+				"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+				"name": "PlayStation 5",
+				"acronym": "PS5",
+			},
+			{
+				"id": "f67f91a9-1072-4aa7-a839-c9155e215c43",
+				"name": "PlayStation 4",
+				"acronym": "PS4",
+			}
+		],
+		"genres": [
+			{
+				"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+				"name": "Action",
+			}
+		],
+		"developer": {
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "Santa Mônica Studio",
+		},
+		"publisher": {
+			"id": "f67f91a9-1072-4aa7-a839-c9155e215c4b",
+			"name": "Sony Entertainment",
+		},
+		"last_update_at_BR": "23-09-2023 15:32:32",
+		"last_update_at": "Sun Aug 06 2023 16:47:15 GMT-0300 (Brasilia Standard Time)",
+  	}
+  ]
+}
+```
+
+```json Response Fail
+{
+  "success": false,
+  "message": "Jogos não encontrados. Verifique se você enviou os filtros corretamente no corpo da requisição.",
+  "errors": {
+    "genres": "not found",
+    "platforms": "not found"
+  }
+}
+```
+
+</ResponseExample>

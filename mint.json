@@ -35,6 +35,7 @@
       "group": "Games Endpoints",
       "pages": [
         "api/games/get",
+        "api/games/games",
         "api/games/create",
         "api/games/update",
         "api/games/delete"
