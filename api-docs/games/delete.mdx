@@ -1,40 +1,55 @@
 ---
 title: "DELETE Game"
 api: "DELETE https://api.nerdapi.com/game"
-description: "Esse endpoint deleta um jogo a partir do seu id."
+description: "Esse endpoint deleta um jogo de acordo com o id."
 ---
 
 ### Body
 
 <ParamField body="id" type="string">
-  ID do jogo que será deletado.
+  ID desse jogo que será deletado.
 </ParamField>
 
 ### Response
 
 <ResponseField name="success" type="boolean">
-  Se requisição foi bem sucedida retorna true, caso contrário retorna false.
+  Retorna true se deletado com successo, false caso contrário.
 </ResponseField>
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request DELETE 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
+```bash Requisição usando cURL
+curl --location --request DELETE "https://api.nerdapi.com/game" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <token>" \
 --data-raw '{
-		"user_group_id": "example_1"
-		"current_token": "abcdef"
+		"id": "6d9d9b73-2f96-4cac-b358-60c86102c25a"
 }'
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/game`, {
+    method: "GET",
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": "Bearer <token>"
+    },
+    body: JSON.stringify({
+      "id": "6d9d9b73-2f96-4cac-b358-60c86102c25a"
+    })
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
 ```
 
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json Response Success
 {
-  "success": true
+  "success": true,
+  "message": "Game id 6d9d9b73-2f96-4cac-b358-60c86102c25a deleted."
 }
 ```
 

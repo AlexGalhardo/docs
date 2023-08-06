@@ -1,46 +1,55 @@
 ---
-title: "Delete User"
-api: "DELETE https://api.mintlify.com/api/user"
-description: "This endpoint deletes an existing user."
+title: "DELETE Movie"
+api: "DELETE https://api.nerdapi.com/movie"
+description: "Esse endpoint deleta um filme de acordo com o id."
 ---
 
 ### Body
 
-<ParamField body="data_source_provided_id" type="string">
-  The data source ID provided in the data tab may be used to identify the data
-  source for the user group
-</ParamField>
-
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group you want to
-  delete
+<ParamField body="id" type="string">
+  ID desse filme que será deletado.
 </ParamField>
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="success" type="boolean">
+  Retorna true se deletado com successo, false caso contrário.
 </ResponseField>
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request DELETE 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
+```bash Requisição usando cURL
+curl --location --request DELETE "https://api.nerdapi.com/movie" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <token>" \
 --data-raw '{
-		"user_group_id": "example_1"
-		"current_token": "abcdef"
+		"id": "6d9d9b73-2f96-4cac-b358-60c86102c25a"
 }'
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/movie`, {
+    method: "GET",
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": "Bearer <token>"
+    },
+    body: JSON.stringify({
+      "id": "6d9d9b73-2f96-4cac-b358-60c86102c25a"
+    })
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
 ```
 
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json Response Success
 {
-  "success": 1
+  "success": true,
+  "message": "Movie id 6d9d9b73-2f96-4cac-b358-60c86102c25a deleted."
 }
 ```
 

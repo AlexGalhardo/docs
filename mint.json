@@ -53,10 +53,11 @@
     {
       "group": "Movies Endpoints",
       "pages": [
-        "api-docs/books/get",
-        "api-docs/books/create",
-        "api-docs/books/update",
-        "api-docs/books/delete"
+        "api-docs/movies/get",
+        "api-docs/movies/movies",
+        "api-docs/movies/create",
+        "api-docs/movies/update",
+        "api-docs/movies/delete"
       ]
     }
   ]

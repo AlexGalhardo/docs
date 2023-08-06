@@ -77,9 +77,9 @@ Objeto completo com todas as informações do jogo.
 <RequestExample>
 
 ```bash Requisição usando cURL
-curl --location --request GET 'https://api.nerdapi.com/game' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
+curl --location --request GET "https://api.nerdapi.com/game" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <token>" \
 --data-raw '{
     "id": "cf9d71d6-4692-4052-aee6-793b92290cb6"
 }'
@@ -87,11 +87,14 @@ curl --location --request GET 'https://api.nerdapi.com/game' \
 
 ```javascript Requisição usando JS
 fetch(`https://api.nerdapi.com/game`, {
-     method: 'GET',
-     headers: { 'Content-Type': 'application/json' },
-     body: JSON.stringify({
-        "title": "God Of War Ragnarok",
-     })
+    method: "GET",
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": "Bearer <token>"
+    },
+    body: JSON.stringify({
+      "title": "God Of War Ragnarok",
+    })
  })
  .then(res => res.json())
  .then(json => console.log(json));
