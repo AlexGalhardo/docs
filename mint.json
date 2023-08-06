@@ -45,7 +45,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": ["api-reference/autenticacao"]
     },
     {
       "group": "Endpoint Examples",
