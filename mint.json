@@ -11,16 +11,6 @@
     "light": "#4D9CFF",
     "dark": "#0050B4"
   },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
-  },
   "anchors": [
     {
       "name": "API Reference",
@@ -46,10 +36,5 @@
         "api-reference/endpoint/delete"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/elonmusk",
-    "github": "https://github.com/alexgalhardo",
-    "linkedin": "https://www.linkedin.com/in/alexgalhardo"
-  }
+  ]
 }
