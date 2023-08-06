@@ -1,10 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "NerdAPI",
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
-  },
+  "name": "Nerd API",
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#0069ED",
