@@ -1,0 +1,86 @@
+---
+title: "CREATE User"
+api: "POST https://api.nerdapi.com/user/register"
+description: "Esse endpoint registra um novo usuário"
+---
+
+### Body
+
+<ParamField body="name" type="string">
+  Nome do novo usuário.
+</ParamField>
+
+<ParamField body="email" type="string">
+  Email do novo usuário.
+</ParamField>
+
+<ParamField body="password" type="number">
+  Senha do novo usuário.
+</ParamField>
+
+### Response
+
+<ResponseField name="type" type="string">
+  Retorna bearer
+</ResponseField>
+
+<ResponseField name="token" type="string">
+  Token em formato string para usar nas requisições de API.
+</ResponseField>
+
+<ResponseField name="expires_at" type="string">
+  Data de expiração do token gerado.
+</ResponseField>
+
+<RequestExample>
+
+```bash Requisição usando cURL
+curl --location --request POST "https://api.nerdapi.com/user/register" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <token>" \
+--data-raw '{
+    "name": "teste",
+	"email": "teste@gmail.com",
+	"password": "teste123"
+}'
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/user/register`, {
+    method: "POST",
+    headers: { 
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+		"name": "teste",
+		"email": "teste@gmail.com",
+		"password": "teste123"
+	})
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response Success
+{
+	"type": "bearer",
+	"token": "MQ.Dq1Q9zsCgM9Vv90sfsAAANkWUrBeQY7mQgkf0t-bKzymoYBdp1zU4utJWK-o",
+	"expires_at": "2023-08-17T02:47:46.286+00:00"
+}
+```
+
+```json Response Fail
+{
+	"errors": [
+		{
+			"message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
+		}
+	]
+}
+```
+
+</ResponseExample>

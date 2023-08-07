@@ -28,6 +28,13 @@
       ]
     },
     {
+      "group": "User Endpoints",
+      "pages": [
+        "api-docs/user/register",
+        "api-docs/user/login"
+      ]
+    },
+    {
       "group": "Games Endpoints",
       "pages": [
         "api-docs/games/get",
