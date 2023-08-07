@@ -1,0 +1,94 @@
+---
+title: "GET ToDos"
+api: "GET https://api.nerdapi.com/todo/all"
+description: "Esse endpoint retorna todos os ToDos."
+---
+
+### Response
+
+<ResponseField name="id" type="number">
+  Id do todo
+</ResponseField>
+
+<ResponseField name="title" type="boolean">
+  Title do todo
+</ResponseField>
+
+<ResponseField name="user_id" type="number">
+  Id usuário
+</ResponseField>
+
+<ResponseField name="desc" type="number">
+  Descrição
+</ResponseField>
+
+<ResponseField name="done" type="number">
+  0 = false
+</ResponseField>
+
+<ResponseField name="created_at" type="string">
+  created_at
+</ResponseField>
+
+<ResponseField name="updated_at" type="string">
+  updated_at
+</ResponseField>
+
+<RequestExample>
+
+```bash Requisição usando cURL
+curl --location --request GET "https://api.nerdapi.com/todo/all" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer MQ.HgfONbtJwRnpQrd2LBk31-qUmlVyGkmtspnAmRmONkylQ2tGSVFebIWDHrK2" 
+```
+
+```javascript Requisição usando JS
+fetch(`https://api.nerdapi.com/todo/all`, {
+    method: "GET",
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": "Bearer MQ.HgfONbtJwRnpQrd2LBk31-qUmlVyGkmtspnAmRmONkylQ2tGSVFebIWDHrK2"
+    }
+ })
+ .then(res => res.json())
+ .then(json => console.log(json));
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response Sucessfull
+[
+	{
+		"id": 1,
+		"title": "Aut voluptate deleniti accusamus.",
+		"user_id": 1,
+		"desc": "Ea ad perspiciatis. Ut repudiandae eius qui ratione similique quas at quod. Sit sint laudantium inventore maxime.\nAd omnis esse aut. Assumenda ullam modi vitae repudiandae suscipit tenetur eum corrupti. Dolor rem doloremque doloribus minus saepe necessitatibus enim sequi non.\nDoloremque exercitationem nisi. Aliquid similique iste officia laboriosam. Sint sequi nesciunt itaque nulla aliquid quisquam corporis esse omnis.\nNesciunt corporis optio autem commodi atque. Dicta dignissimos adipisci quos labore culpa neque magnam ea. Dolorem voluptas ducimus deleniti ipsum impedit veritatis.",
+		"done": 0,
+		"created_at": "2023-08-06T23:52:37.000-03:00",
+		"updated_at": "2023-08-06T23:52:37.000-03:00"
+	},
+	{
+		"id": 2,
+		"title": "Quas explicabo nam eum quod.",
+		"user_id": 1,
+		"desc": "Voluptates iusto delectus quaerat repellendus. Repellat esse eius quas fuga non repudiandae labore. Nostrum beatae iste minus dicta blanditiis illo quasi.\nOptio porro cupiditate ipsam expedita distinctio aliquam animi. Aliquam facilis quae accusantium. Sit ratione delectus quasi consequatur dignissimos.\nQuasi ducimus in nostrum. Autem aperiam illo deserunt nam voluptate. Esse suscipit veniam quis quae.\nUnde ipsum ipsam aliquam aliquam suscipit possimus eos amet recusandae. Consequuntur quibusdam tempore eius possimus cupiditate ea. Nostrum ab ut maiores deserunt natus corrupti laborum blanditiis pariatur.",
+		"done": 0,
+		"created_at": "2023-08-06T23:52:37.000-03:00",
+		"updated_at": "2023-08-06T23:52:37.000-03:00"
+	}
+]
+```
+
+```json Response Fail
+{
+	"errors": [
+		{
+			"message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
+		}
+	]
+}
+```
+
+</ResponseExample>

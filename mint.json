@@ -35,6 +35,13 @@
       ]
     },
     {
+      "group": "ToDo Endpoints",
+      "pages": [
+        "api-docs/todos/get",
+        "api-docs/todos/all"
+      ]
+    },
+    {
       "group": "Games Endpoints",
       "pages": [
         "api-docs/games/get",
