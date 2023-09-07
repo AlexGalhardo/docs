@@ -1,56 +1,38 @@
 ---
-title: "CREATE Game"
-api: "POST https://api.nerdapi.com/game"
-description: "Esse endpoint cria um novo jogo."
+title: "GET GAME BY TITLE"
+api: "GET https://api.nerdapi.com/games/title/:title"
+description: "This endpoint returns all games with the same or similar title as the search."
 ---
 
 ### Body
 
+<ParamField body="id" type="string">
+  ID do jogo.
+</ParamField>
+
 <ParamField body="title" type="string">
-  Título do jogo.
-</ParamField>
-
-<ParamField body="cover_image" type="string">
-  URL da imagem de capa do jogo.
-</ParamField>
-
-<ParamField body="release_year" type="number">
-  Número inteiro com ano de lançamento.
-</ParamField>
-
-<ParamField body="metacritic_score" type="number">
-  Número inteiro com nota do metacritic.
-</ParamField>
-
-<ParamField body="platforms" type="array">
-  - Plataforms disponíveis para jogar esse jogo.
-  - Disponíveis: ["PC", "ANDROID", "IOS", "PS1", "PS2", "PS3", "PS4", "PS5", "NINTENDO_SWITCH", "XBOX_SERIES_S", "XBOX_SERIES_X", "XBOX_ONE", "XBOX_360", "XBOX_ORIGINAL"]
-</ParamField>
-
-<ParamField body="genres" type="array">
-  - Tipos de genêros que esse jogo se adequa.
-  - Disponíveis: ["ACTION", "RPG", "MULTIPLAYER", "SINGLEPLAYER", "FPS"]
-</ParamField>
-
-<ParamField body="developer" type="string">
-  Desenvolvedora desse jogo.
-</ParamField>
-
-<ParamField body="publisher" type="string">
-  Publicadora desse jogo.
+  Título do Jogo
 </ParamField>
 
 ### Response
 
 <ResponseField name="success" type="boolean">
-  Retorna true se foi criado com sucesso, false caso contrário.
+  Returna true se requisição foi bem sucedida, false caso contrário.
+</ResponseField>
+
+<ResponseField name="message" type="boolean">
+  Se retornar success false, retorna breve resumo do problema.
+</ResponseField>
+
+<ResponseField name="errors" type="boolean">
+  Se retornar success false, retorna objeto com os erros encontrados.
 </ResponseField>
 
 <ResponseField name="game" type="object">
 
 Objeto completo com todas as informações do jogo.
 
-<Expandable title="Expandir">
+<Expandable title="Toggle object">
 
 <ResponseField name="id" type="string">
   ID do jogo.
@@ -95,35 +77,23 @@ Objeto completo com todas as informações do jogo.
 <RequestExample>
 
 ```bash Requisição usando cURL
-curl --location --request POST "https://api.nerdapi.com/game" \
+curl --location --request GET "https://api.nerdapi.com/game" \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <token>" \
 --data-raw '{
-    "title": "Game title",
-    "year_release": 2020,
-    "cover_image": "https://test.com/game.png",
-    "metacritic_score": 95,
-    "platforms": "PS4,PS5",
-    "developer": "Game Developer",
-    "publisher": "Game Publisher",
+    "id": "cf9d71d6-4692-4052-aee6-793b92290cb6"
 }'
 ```
 
 ```javascript Requisição usando JS
 fetch(`https://api.nerdapi.com/game`, {
-    method: "POST",
+    method: "GET",
     headers: { 
       "Content-Type": "application/json",
       "Authorization": "Bearer <token>"
     },
     body: JSON.stringify({
-      "title": "Game title",
-      "year_release": 2020,
-      "cover_image": "https://test.com/game.png",
-      "metacritic_score": 95,
-      "platforms": "PS4,PS5",
-      "developer": "Game Developer",
-      "publisher": "Game Publisher",
+      "title": "God Of War Ragnarok",
     })
  })
  .then(res => res.json())
@@ -134,14 +104,13 @@ fetch(`https://api.nerdapi.com/game`, {
 
 <ResponseExample>
 
-```json Response Success
+```json Response Sucessfull
 {
   "success": true,
-  "message": "Jogo criado com sucesso!",
   "game": {
     "id": "cf9d71d6-4692-4052-aee6-793b92290cb6",
-    "title": "Game title",
-    "cover_image": "https://teste.com/game.png",
+    "title": "God Of War Ragnarok",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
     "release_year": 2022,
     "metacritic_score": 95,
     "platforms": [
@@ -179,12 +148,10 @@ fetch(`https://api.nerdapi.com/game`, {
 ```json Response Fail
 {
   "success": false,
-  "message": "Jogo não foi criado. Algum campo está faltando ou enviado incorretamente.",
+  "message": "Jogo não encontrado. Verifique se você enviou id e/ou title corretamente no corpo da requisição.",
   "errors": {
-    "title": "invalid or missing",
-    "cover_image": "invalid or missing",
-    "release_year": "invalid or missing",
-    "genres": "invalid or missing"
+    "id": "not found",
+    "title": "not found"
   }
 }
 ```

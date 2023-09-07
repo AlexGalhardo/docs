@@ -1,7 +1,7 @@
 {
 	"$schema": "https://mintlify.com/schema.json",
 	"name": "Nerd API",
-	"favicon": "/favicon.png",
+	"favicon": "favicon.png",
 	"colors": {
 		"primary": "#0069ED",
 		"light": "#4D9CFF",
@@ -11,7 +11,7 @@
 		{
 			"name": "API Requests",
 			"icon": "rectangle-terminal",
-			"url": "api-docs"
+			"url": "/api"
 		}
 	],
 	"navigation": [
@@ -24,35 +24,35 @@
 		{
 			"group": "API",
 			"pages": [
-				"api-docs/authentication"
+				"api/authentication"
 			]
 		},
 		{
 			"group": "Games Endpoints",
 			"pages": [
-				"api-docs/games/id/:movie_id",
-				"api-docs/games/title/:movie_title"
+				"api/games/id",
+				"api/games/title"
 			]
 		},
 		{
 			"group": "Books Endpoints",
 			"pages": [
-				"api-docs/books/id/:movie_id",
-				"api-docs/books/title/:movie_title"
+				"api/books/id",
+				"api/books/title"
 			]
 		},
 		{
 			"group": "Movies Endpoints",
 			"pages": [
-				"api-docs/movies/id/:movie_id",
-				"api-docs/movies/title/:movie_title"
+				"api/movies/id",
+				"api/movies/title"
 			]
 		},
 		{
 			"group": "TV Shows Endpoints",
 			"pages": [
-				"api-docs/tvshows/id/:movie_id",
-				"api-docs/tvshows/title/:movie_title"
+				"api/tvshows/id",
+				"api/tvshows/title"
 			]
 		}
 	]
