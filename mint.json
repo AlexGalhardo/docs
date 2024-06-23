@@ -1,0 +1,39 @@
+{
+	"$schema": "https://mintlify.com/schema.json",
+	"name": "Nerd API",
+	"favicon": "favicon.png",
+	"colors": {
+		"primary": "#0069ED",
+		"light": "#4D9CFF",
+		"dark": "#0050B4"
+	},
+	"anchors": [
+		{
+			"name": "API Requests",
+			"icon": "rectangle-terminal",
+			"url": "/endpoint"
+		}
+	],
+	"navigation": [
+		{
+			"group": "Home",
+			"pages": [
+				"introduction"
+			]
+		},
+		{
+			"group": "API",
+			"pages": [
+				"endpoint/authentication"
+			]
+		},
+		{
+			"group": "Games Endpoints",
+			"pages": [
+				"endpoint/games/id",
+				"endpoint/games/title",
+				"endpoint/games/random"
+			]
+		}
+	]
+}

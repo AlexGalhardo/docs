@@ -1,0 +1,283 @@
+---
+title: "GET RANDOM GAME"
+api: "GET https://api.nerdapi.com/games/random"
+description: "This endpoint returns a random game."
+---
+
+### Headers
+
+<ParamField body="Authorization Bearer" type="string">
+	Send in each request your API KEY in request header authorization bearer token
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+	Return true if response was successfully, or false otherwise.
+</ResponseField>
+
+<ResponseField name="error" type="string">
+  	Return error description.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+	Return data with the game object
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="string">
+  	Game ID
+</ResponseField>
+
+<ResponseField name="title" type="string">
+  	Game title
+</ResponseField>
+
+<ResponseField name="slug" type="string">
+  	Game slug
+</ResponseField>
+
+<ResponseField name="cover_image" type="string">
+  	Game cover image.
+</ResponseField>
+
+<ResponseField name="summary" type="number">
+	Game summary.
+</ResponseField>
+
+<ResponseField name="release_year" type="number">
+
+	Game release date
+
+</ResponseField>
+
+<ResponseField name="igdb" type="object">
+
+	Game igdb reference
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="number">
+  	Game ID at IGDB.com
+</ResponseField>
+
+<ResponseField name="url" type="number">
+  	Url of the game at IGDB.com
+</ResponseField>
+
+<ResponseField name="rating" type="string">
+  	Game rating at IGDB.com
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+<ResponseField name="developer" type="array">
+
+	Game developer
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="number">
+  	Game developer id
+</ResponseField>
+
+<ResponseField name="name" type="number">
+  	Game developer name
+</ResponseField>
+
+<ResponseField name="slug" type="string">
+  	Game developer slug
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+
+<ResponseField name="publisher" type="array">
+
+	Game publisher
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="number">
+  	Game publisher id
+</ResponseField>
+
+<ResponseField name="name" type="number">
+  	Game publisher name
+</ResponseField>
+
+<ResponseField name="slug" type="string">
+  	Game publisher slug
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+
+<ResponseField name="platforms_available" type="array">
+
+	Game platforms available to play
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="number">
+  	Game platforms available id
+</ResponseField>
+
+<ResponseField name="name" type="number">
+  	Game platform available name
+</ResponseField>
+
+<ResponseField name="slug" type="string">
+  	Game platform available slug
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+
+
+<ResponseField name="genres" type="array">
+
+	Game genres
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="number">
+  	Game genre id
+</ResponseField>
+
+<ResponseField name="name" type="number">
+  	Game genre name
+</ResponseField>
+
+<ResponseField name="slug" type="string">
+  	Game genre slug
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+
+</Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```javascript Using Javascript
+fetch(`https://api.nerdapi.com/games/random`, {
+		method: "GET",
+		headers: { 
+			"Content-Type": "application/json",
+			"Authorization": "Bearer <YOUR_API_KEY>"
+		}
+ 	})
+ 	.then(res => res.json())
+ 	.then(json => console.log(json));
+```
+
+```bash Using cURL
+curl --location --request GET "https://api.nerdapi.com/games/random" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <YOUR_API_KEY>" \
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response Sucessfull
+{
+	"success": true,
+	"data": {
+        "id": "21a0471b-c19b-41e2-a2ea-a286528156f4",
+        "title": "Super Mario World",
+        "slug": "super-mario-world",
+        "cover_image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co65za.jpg",
+        "summary": "A 2D platformer and first entry on the SNES in the Super Mario franchise, Super Mario World follows Mario as he attempts to defeat Bowser's underlings and rescue Princess Peach from his clutches. The game features a save system, a less linear world map, an expanded movement arsenal and numerous new items for Mario, alongside new approaches to level design and art direction.",
+        "release_year": 1990,
+        "igdb": {
+            "id": 1070,
+            "url": "https://www.igdb.com/games/super-mario-world",
+            "rating": 96
+        },
+        "developer": {
+            "id": 265989,
+            "name": "Nintendo EAD",
+            "slug": "nintendo-ead"
+        },
+        "publisher": {
+            "id": 265990,
+            "name": "Nintendo",
+            "slug": "nintendo"
+        },
+        "platforms_available": [
+            {
+                "id": 41,
+                "name": "Wii U",
+                "slug": "wii-u"
+            },
+            {
+                "id": 137,
+                "name": "New Nintendo 3DS",
+                "slug": "new-nintendo-3ds"
+            },
+            {
+                "id": 52,
+                "name": "Arcade",
+                "slug": "arcade"
+            },
+            {
+                "id": 5,
+                "name": "Wii",
+                "slug": "wii"
+            },
+            {
+                "id": 58,
+                "name": "Super Famicom",
+                "slug": "super-famicom"
+            },
+            {
+                "id": 19,
+                "name": "Super Nintendo Entertainment System",
+                "slug": "super-nintendo-entertainment-system"
+            }
+        ],
+        "genres": [
+            {
+                "id": 31,
+                "name": "Adventure",
+                "slug": "adventure"
+            },
+            {
+                "id": 8,
+                "name": "Platform",
+                "slug": "platform"
+            }
+        ]
+  },
+}
+```
+
+```json Response Fail
+{
+  "success": false,
+  "error": "Something went wrong",
+}
+```
+
+</ResponseExample>
