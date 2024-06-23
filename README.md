@@ -6,11 +6,10 @@
 
 - A personal project I created to improve my API documentation skills for an awesome developer experience (DX) while building [https://nerdapi.com](https://nerdapi.com)
 
-## API
+## Front-End & API
 
 - FrontEnd Source code: <https://github.com/AlexGalhardo/nerdapi.com>
 - BackEnd API Source Code: <https://github.com/AlexGalhardo/api.nerdapi.com>
-- Docs Live: <https://docs.nerdapi.com>
 
 ### Development Setup Local
 
