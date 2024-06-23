@@ -1,13 +1,19 @@
 ---
 title: "GET GAME BY ID"
-api: "GET https://api.nerdapi.com/games/id/:game_id"
+api: "GET https://api.nerdapi.com/games/id/{game_id}"
 description: "This endpoint returns only one game according to the searched id."
 ---
 
 ### Headers
 
-<ParamField body="Authorization Bearer" type="string">
+<ParamField header="Authorization" type="string" required>
 	Send in each request your API KEY in request header authorization bearer token
+</ParamField>
+
+### Param
+
+<ParamField path="game_id" type="string" required>
+  Search game id
 </ParamField>
 
 ### Response

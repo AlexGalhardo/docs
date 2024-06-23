@@ -1,13 +1,19 @@
 ---
 title: "GET GAME BY TITLE"
-api: "GET https://api.nerdapi.com/games/title/:game_title"
+api: "GET https://api.nerdapi.com/games/title/{game_title}"
 description: "This endpoint returns array of games according to the searched title."
 ---
 
 ### Headers
 
-<ParamField body="Authorization Bearer" type="string">
+<ParamField header="Authorization" type="string" required>
 	Send in each request your API KEY in request header authorization bearer token
+</ParamField>
+
+### Param
+
+<ParamField path="game_title" type="string" placeholder="mario" required>
+  Search game title
 </ParamField>
 
 ### Response
