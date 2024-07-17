@@ -1,6 +1,6 @@
 ---
 title: "GET GAME BY TITLE"
-api: "GET https://api.docs.games.alexgalhardo.com/games/title/{game_title}"
+api: "GET https://api.games.alexgalhardo.com/games/title/{game_title}"
 description: "This endpoint returns array of games according to the searched title."
 ---
 
@@ -185,7 +185,7 @@ description: "This endpoint returns array of games according to the searched tit
 <RequestExample>
 
 ```javascript Using Javascript
-fetch(`https://api.docs.games.alexgalhardo.com/games/title/godofwar`, {
+fetch(`https://api.games.alexgalhardo.com/games/title/godofwar`, {
 		method: "GET",
 		headers: { 
 			"Content-Type": "application/json",
@@ -197,7 +197,7 @@ fetch(`https://api.docs.games.alexgalhardo.com/games/title/godofwar`, {
 ```
 
 ```bash Using cURL
-curl --location --request GET "https://api.docs.games.alexgalhardo.com/games/title/supermarioworld" \
+curl --location --request GET "https://api.games.alexgalhardo.com/games/title/supermarioworld" \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <YOUR_API_KEY>" \
 ```
