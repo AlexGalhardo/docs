@@ -1,15 +1,15 @@
 <div align="center">
-  <h1 align="center"><a href="https://docs.nerdapi.com/" target="_blank">docs.nerdapi.com</a></h1>
+  <h1 align="center"><a href="https://docs.games.alexgalhardo.com/" target="_blank">docs.games.alexgalhardo.com</a></h1>
 </div>
 
 ## Introduction
 
-- A personal project I created to improve my API documentation skills for an awesome developer experience (DX) while building [https://nerdapi.com](https://nerdapi.com)
+- A personal project I created to improve my API documentation skills for an awesome developer experience (DX) while building [https://games.alexgalhardo.com](https://games.alexgalhardo.com)
 
 ## Front-End & API
 
-- FrontEnd Source code: <https://github.com/AlexGalhardo/nerdapi.com>
-- BackEnd API Source Code: <https://github.com/AlexGalhardo/api.nerdapi.com>
+- FrontEnd Source code: <https://github.com/AlexGalhardo/games.alexgalhardo.com>
+- BackEnd API Source Code: <https://github.com/AlexGalhardo/api.games.alexgalhardo.com>
 
 ### Development Setup Local
 
