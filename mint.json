@@ -1,6 +1,6 @@
 {
 	"$schema": "https://mintlify.com/schema.json",
-	"name": "Nerd API",
+	"name": "Games API Docs",
 	"favicon": "favicon.png",
 	"colors": {
 		"primary": "#0069ED",
